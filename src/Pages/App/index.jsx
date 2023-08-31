@@ -10,6 +10,9 @@ import MyProyect from '../MyProyect'
 import MyProyects from '../MyProyects'
 import NotFound  from '../NotFound'
 import SigIn from '../SigIn'
+import NavBar from "../../Components/NavBar"
+import TapBar from "../../Components/TapBar"
+
 
 
 
@@ -30,10 +33,11 @@ function App() {
     }
   
   
-
+    const [isMovile, setIsMovile] = useState(null)
   return (
     <BrowserRouter>
-    
+      <NavBar/> 
+    {isMovile? <NavBar/> : <TapBar/> }
       <AppRouter/>
     </BrowserRouter>
   )
