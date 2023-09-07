@@ -32,13 +32,12 @@ function App() {
       return routes
     }
   
-  
-    const [isMovile, setIsMovile] = useState(null)
+
   return (
     <BrowserRouter>
-      <NavBar/> 
-    {isMovile? <NavBar/> : <TapBar/> }
+        {window.innerWidth <768? <TapBar/> :<NavBar/>}
       <AppRouter/>
+
     </BrowserRouter>
   )
 }
