@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import '../App/'
 import './tailwind.css'
 import { BrowserRouter, useRoutes } from 'react-router-dom'
@@ -12,6 +11,7 @@ import NotFound  from '../NotFound'
 import SigIn from '../SigIn'
 import NavBar from "../../Components/NavBar"
 import TapBar from "../../Components/TapBar"
+import { CaribiaProvider } from '../../Context'
 
 
 
@@ -34,11 +34,14 @@ function App() {
   
 
   return (
-    <BrowserRouter>
-        {window.innerWidth <768? <TapBar/> :<NavBar/>}
-      <AppRouter/>
-
-    </BrowserRouter>
+ 
+    <CaribiaProvider>
+      <BrowserRouter>
+        {window.innerWidth < 768 ? <TapBar/> :<NavBar/>}
+        <AppRouter/>
+      </BrowserRouter>
+    </CaribiaProvider>
+   
   )
 }
 

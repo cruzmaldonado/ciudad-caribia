@@ -1,9 +1,14 @@
 import React from 'react'
+import Layout from "../../Components/Layout"
+import { useContext } from 'react'
+import { CaribiaContext } from '../../Context'
 
 
 const Home = () => {
+    const context =useContext(CaribiaContext)
   return (
-    <section className="w-full h-screen">
+<Layout>
+    <section className={`${context.darkMode ? 'bg-gray-800' : 'bg-white'}  w-full h-screen`}>
        
        <div className="" id="home">
             <div className="w-full h-3/4">
@@ -14,7 +19,7 @@ const Home = () => {
                     <div className="hidden h-auto lg:w-2/3 lg:flex pb-6">
                         <p className=" text-4xl ml-16 font-bold text-white">Ciudad Caribia Distrito Motor de desarrollo.</p>
                     </div>
-                    <button className="bg-white shadow-lg w-36 block mx-auto rounded-full p-4 text-lg font-semibold text-primary  shadow-gray-700/50  transition duration-500 ease-in-out hover:bg-primary hover:text-white transform hover:-translate-y-1 hover:scale-110 lg:ml-16">EXPLORAR</button>
+                    <button className="bg-white shadow-lg w-38 block mx-auto rounded-full p-4 text-md font-semibold text-primary  shadow-gray-700/50  transition duration-500 ease-in-out hover:bg-primary hover:text-white transform hover:-translate-y-1 hover:scale-110 lg:ml-16">EXPLORAR</button>
                    
                 </div>
 
@@ -31,16 +36,16 @@ const Home = () => {
 
 
 
-        <div  className="w-full h-auto" id="recomendados">
+        <div  className={`${context.darkMode ? 'bg-gray-900' : 'bg-white'} w-full h-auto`} id="recomendados" >
             <p className="text-3xl font-semibold text-primary dark:text-white pl-6 pt-6">Recomendados</p>
            
            <div className="w-auto h-72 items-center mt-6 overflow-x-auto overscroll-contain flex space-x-4 overflow-y-hidden p-6">
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img1 bg-cover"></div>
-                <div className="w-full h-2/5 bg-secondary rounded-b-lg  dark:bg-gray-700">
+                <div className={`${context.darkMode ? 'bg-gray-700' : 'bg-secondary'} w-full h-2/5  rounded-b-lg `}>
                     
-                    <p className="text-white font-semibold  text- px-4 py-2  ">Ciudad Caribia</p>
-                    <p className="text-white text-md px-4 ">Paisajes increibles</p>
+                    <p className="text-white font-semibold  text-xl px-4 py-2  ">Ciudad Caribia</p>
+                    <p className="text-white text-md px-4 text-sm ">Paisajes increibles</p>
                     
                 </div>
 
@@ -48,68 +53,70 @@ const Home = () => {
             </div> 
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img2 bg-cover"></div>
-                <div className="w-full h-2/5 bg-white  rounded-b-lg dark:bg-gray-800">
+                <div className={`${context.darkMode ? 'bg-gray-800 ' : 'bg-white'} w-full h-2/5  rounded-b-lg `}>
+
                     
-                    <p className="text-tertiary font-semibold   px-4 py-2 dark:text-white">Rutas para bicicletas</p>
-                    <p className="text-tertiary text-md px-4 dark:text-white">ideales para ciclistas</p>
+                    
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'} font-semibold text-xl px-4 py-2 `}>Rutas para bicicletas</p>
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'}  text-sm px-4 `}>ideales para ciclistas</p>
                     
                 </div>
             </div>
 
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img3 bg-cover"></div>
-                <div className="w-full h-2/5 bg-secondary rounded-b-lg  dark:bg-gray-700">
+                <div className={`${context.darkMode ? 'bg-gray-700' : 'bg-secondary'} w-full h-2/5  rounded-b-lg `}>
                     
-                    <p className="text-white font-semibold  text- px-4 py-2 ">Arboles y arbusto en toda la ciudad</p>
-                    <p className="text-white text-md px-4 ">Vive en armonia.</p>
+                    <p className="text-white font-semibold  text-xl px-4 py-2 ">Arboles en toda la ciudad</p>
+                    <p className="text-white text-sm px-4 ">Vive en armonia.</p>
                     
                 </div>
             </div>
 
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img4 bg-cover"></div>
-                <div className="w-full h-2/5 bg-white rounded-b-lg dark:bg-gray-800">
+                <div className={`${context.darkMode ? 'bg-gray-800 ' : 'bg-white'} w-full h-2/5  rounded-b-lg `}>
                     
-                    <p className="text-tertiary font-semibold  text- px-4 py-2 dark:text-white">seguridad ante todo</p>
-                    <p className="text-tertiary text-md px-4 dark:text-white">Descubre nuestra seguridad</p>
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'} font-semibold text-xl px-4 py-2 `}>seguridad ante todo</p>
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'}  text-sm px-4 `}>Ciudad segura</p>
                     
                 </div>
             </div>
 
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img5 bg-cover"></div>
-                <div className="w-full h-2/5 bg-secondary rounded-b-lg  dark:bg-gray-700">
+                <div className={`${context.darkMode ? 'bg-gray-700' : 'bg-secondary'} w-full h-2/5  rounded-b-lg `}>
                     
-                    <p className="text-white font-semibold  text- px-4 py-2 ">Flora paradisiaca</p>
-                    <p className="text-white text-md px-4 ">vive la naturaleza  </p>
+                    <p className="text-white font-semibold  text-xl px-4 py-2 ">Flora paradisiaca</p>
+                    <p className="text-white text-sm px-4 ">vive la naturaleza  </p>
                     
                 </div>
             </div>
 
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img6 bg-cover"></div>
-                <div className="w-full h-2/5 bg-white rounded-b-lg dark:bg-gray-800">
+                <div className={`${context.darkMode ? 'bg-gray-800 ' : 'bg-white'} w-full h-2/5  rounded-b-lg `}>
                     
-                    <p className="text-tertiary font-semibold  text- px-4 py-2 dark:text-white">Contruyendo el futuro</p>
-                    <p className="text-tertiary text-md px-4 dark:text-white">Nuevas Obras</p>
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'} font-semibold text-xl px-4 py-2 `}>Contruyendo el futuro</p>
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'}  text-sm px-4 `}>Nuevas Obras</p>
                     
                 </div>
             </div>  
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img7 bg-cover"></div>
-                <div className="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+                <div className={`${context.darkMode ? 'bg-gray-700' : 'bg-secondary'} w-full h-2/5  rounded-b-lg `}>
                     
-                    <p className="text-white font-semibold  text- px-4 py-2 ">sorprendente</p>
-                    <p className="text-white text-md px-4 ">Descubre algo nuevo cada día. </p>
+                    <p className="text-white font-semibold  text-xl px-4 py-2 ">sorprendente</p>
+                    <p className="text-white text-sm px-4 ">Descubre algo nuevo cada día. </p>
                     
                 </div>
             </div> 
             <div className="Card">
                 <div className="w-full h-3/5 rounded-t-lg bg-img2 bg-cover"></div>
-                <div className="w-full h-2/5 bg-white  rounded-b-lg dark:bg-gray-800">
+                <div className={`${context.darkMode ? 'bg-gray-800 ' : 'bg-white'} w-full h-2/5  rounded-b-lg `}>
                     
-                    <p className="text-tertiary font-semibold   px-4 py-2 dark:text-white">Rutas para bicicletas</p>
-                    <p className="text-tertiary text-md px-4 dark:text-white">ideales para ciclistas</p>
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'} font-semibold text-xl px-4 py-2 `}>Rutas para bicicletas</p>
+                    <p className={`${context.darkMode ? 'text-white ' : 'text-tertiary'}  text-sm px-4 `}>Ideales para ciclistas</p>
                     
                 </div>
             </div> 
@@ -120,8 +127,8 @@ const Home = () => {
             
         </div>
 
-        <div className="px-4 lg:px-6 w-full" id= "rentas_destacadas">
-            <h2 className="text-3xl text-primary font-semibold pb-6 mt-2 dard:text-white dark:text-white">Rentas Destacadas</h2>
+        <div className={`${context.darkMode ? 'bg-gray-900' : 'bg-white'} px-4 lg:px-6 w-full`} id= "rentas_destacadas">
+            <h2 className="text-3xl text-primary font-semibold py-6 mt-2 dard:text-white dark:text-white">Rentas Destacadas</h2>
             <div className="w-full h-auto flex flex-col  ">
                 
                 <div className="  w-full h-100 bg-img10 bg-cover bg-center rounded-xl mb-8 lg:bg-center cursor-pointer ">
@@ -157,7 +164,7 @@ const Home = () => {
             </div>
         </div>
 
-        <div className="w-full h-full" id="faqs">
+        <div className={`${context.darkMode ? 'bg-gray-900' : 'bg-white'} w-full h-full`} id="faqs">
             <div className="w-full h-full px-6 flex flex-col space-y-4 items-center justify-center">
                 <p className="text-3xl text-primary font-semibold mt-4  dark:text-white">FAQS</p>
                 <div>
@@ -192,11 +199,13 @@ const Home = () => {
             <p className="text-sm text-gray-300 cursor-pointer ">Inversionistas</p>
             <p className="text-sm text-gray-300 cursor-pointer">Empleos</p>
             <p className="text-sm text-gray-300 cursor-pointer">Términos y condiciones</p>
-            <p className="text-sm text-gray-300 cursor-pointer">Platzi Travel, Inc.</p>
+            <p className="text-sm text-gray-300 cursor-pointer ">Platzi Travel, Inc.</p>
 
         </footer>
     </section>
+</Layout>
   )
 }
 
+    
 export default Home
